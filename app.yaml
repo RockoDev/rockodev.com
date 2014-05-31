@@ -1,0 +1,48 @@
+application: rockodevphp
+version: 1
+runtime: php
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /static/((css|js)/.*\.(css|js))
+  static_files: static/\1
+  upload: static/((css|js)/.*\.(css|js))
+  expiration: 1s
+  #http_headers:
+  #  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  #  Expires: Tue, 03 Jul 2001 06:00:00 GMT
+  #  Pragma: no-cache
+
+- url: /static/img/(.*\.(png|jpg|jpeg|gif))
+  static_files: static/img/\1
+  upload: static/img/(.*\.(png|jpg|jpeg|gif))
+
+#- url: /static/img
+#  static_dir: public/img
+
+- url: /chromecast
+  static_dir: chromecast
+
+- url: /game/static
+  static_dir: game/static
+
+- url: (/game|/game/)
+  script: game/index.php
+
+- url: /favicon\.ico
+  static_files: static/favicon.ico
+  upload: static/favicon\.ico
+
+- url: /robots\.txt
+  static_files: static/robots.txt
+  upload: static/robots\.txt
+
+- url: /img\.php
+  script: img.php
+
+- url: .*
+  script: index.php
+
+#error_handlers:
+#  - file: default_error.html

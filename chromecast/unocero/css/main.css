@@ -1,0 +1,312 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	width: 100%;
+	height: 720px;
+	background-color: #e5e5e5;
+	color: #333;
+	font-family: Roboto, sans-serif;
+	font-size: 20px;
+	overflow: hidden;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
+}
+
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	height: 70px;
+	background-color: #3a3;
+	font-size: 0.8em;
+}
+
+	header .left {
+		float: left;
+	}
+
+	header .right {
+		float: right;
+	}
+
+	header .right:after {
+		clear: both;
+	}
+
+	header img.logo {
+		display: inline-block;
+		width: auto;
+		height: 60px;
+		padding: 5px;
+	}
+
+section {
+	display: inline-block;
+	vertical-align: top;
+	overflow: auto;
+}
+
+section#list {
+	position: fixed;
+	top: 80px;
+	left: 0px;
+	width: 320px;
+	overflow: auto;
+}
+
+	section#list > .post {
+		background-color: #fff;
+		margin: 10px auto;
+		padding: 0px;
+		border: 1px #ccc solid;
+		width: 300px;
+		height: auto;
+		display: block;
+		vertical-align: top;
+		text-align: left;
+		color: #333;
+	}
+
+	section#list > a.post:focus,
+	section#list > a.post:hover {
+		background-color: #3a3;
+		border: 1px #fff solid;
+		color: #fff;
+	}
+
+		section#list > .post > .title {
+			padding: 10px;
+			margin: 0px;
+			font-weight: 400;
+		}
+
+		section#list > .post > .image {
+			width: 300px;
+			height: 170px;
+			background-size: cover;
+			background-position: center;
+		}
+
+		section#list > .post > .date {
+			padding: 5px 10px;
+			margin: 0px;
+			font-size: 0.7em;
+		}
+
+section#list_loading_more {
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	z-index: 100;
+	width: 320px;
+	height: 30px;
+	background-color: #e5e5e5;
+	overflow: auto;
+	text-align: center;
+}
+
+	section#list_loading_more span {
+		display: inline-block;
+		padding: 7px;
+		height: 16px;
+		color: #333;
+		font-size: 0.8em;
+		line-height: 16px;
+		font-weight: bold;
+	}
+
+section#details {
+	position: fixed;
+	top: 80px;
+	right: 0px;
+	overflow: auto;
+	width: 700px; /* Default (fix) */
+	height: 300px; /* Default (fix) */
+	padding: 10px;
+	border-style: solid;
+	border-width: 0px 0px 10px 0px;
+	border-color: transparent;
+}
+
+section#details:focus {
+	border-color: #3a3;
+}
+
+	section#details .meta {
+		padding: 20px;
+		background-color: #333;
+		border: 2px #ccc solid;
+		color: #999;
+	}
+
+		section#details .meta h1 {
+			color: #fff;
+			font-size: 1.5em;
+			font-weight: 900;
+			margin: 0px 0px 0.75em 0px;
+			/*
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			*/
+		}
+
+		section#details .meta p {
+			margin: 3px 0px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+
+	section#details .content {
+		padding: 20px;
+	}
+
+	section#details p {
+		margin-bottom: 20px;
+	}
+
+	section#details iframe,
+	section#details embed,
+	section#details .video {
+		margin-bottom: 20px;
+	}
+
+	section#details a {
+		color: #3a3 !important;
+		text-decoration: none !important;
+		font-weight: bold !important;
+		border: 0px !important;
+	}
+
+	section#details ul,
+	section#details ol {
+		text-align: left;
+		padding-left: 30px;
+	}
+
+	section#details li {
+		text-align: left;
+		padding-left: 0px;
+		list-style: circle;
+	}
+/*
+	section#details iframe {
+		max-width: 97% !important;
+		max-height: 200px !important;
+		margin: 0px auto;
+		border: 0px;
+		display: block;
+	}
+*/
+	section#details img {
+		border: 0px;
+		max-width: 97% !important;
+	}
+
+	section#details img.grandes {
+		width: auto !important;
+		height: auto !important;
+		margin: 0px auto;
+		display: block;
+	}
+
+	section#details a.video {
+		background-color: #CCC;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('../img/video_play.png'), none;
+		background-size: 84px 85px, cover;
+		-webkit-background-size: 84px 85px, cover;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		display: block;
+		margin: 0px auto;
+		width: 300px;
+		height: 170px;
+		max-width: 97%;
+		-webkit-opacity: 1.0;
+		opacity: 1.0;
+	}
+
+	section#details a.video:active {
+		-webkit-opacity: 0.50;
+		opacity: 0.50;
+	}
+
+	section#details div.podcast {
+		margin: 10px auto;
+		text-align: center;
+		width: 97%;
+		max-width: 300px;
+	}
+
+	section#details div.podcast a {
+		display: block;
+		padding: 15px;
+		text-align: center;
+		font-weight: bold;
+		text-decoration: none;
+		border: 2px #B3B3B3 solid !important;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(225,225,225,1) 100%);
+	}
+
+	section#details blockquote.twitter-tweet {
+		border: 2px dashed #36C9FF !important;
+		padding: 16px 8px 8px 8px !important;
+		margin: 5px auto !important;
+		background-color: #FFF !important;
+		background-position: 8px 8px, center !important;
+		background-repeat: no-repeat !important;
+		background-image: url('../img/tweet_icon.png'), none !important;
+		background-size: 16px 16px, cover !important;
+		-webkit-background-size: 16px 16px, cover !important;
+	}
+
+	section#details .loading_indicator {
+		display: inline-block;
+		vertical-align: middle;
+		width: 100px;
+		height: 100px;
+		margin: auto;
+		padding: 0px;
+		background-color: transparent;
+		border-width: 10px;
+		border-style: inset;
+		border-color: #3a3;
+		border-radius: 50%;
+		animation: loadingIndicatorAnimation 3s infinite linear;
+		-webkit-animation: loadingIndicatorAnimation 3s infinite linear;
+		-moz-animation: loadingIndicatorAnimation 3s infinite linear;
+		-o-animation: loadingIndicatorAnimation 3s infinite linear;
+	}
+@keyframes loadingIndicatorAnimation {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+@-webkit-keyframes loadingIndicatorAnimation {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes loadingIndicatorAnimation {
+	from { -moz-transform: rotate(0deg); }
+	to { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes loadingIndicatorAnimation {
+	from { -o-transform: rotate(0deg); }
+	to { -o-transform: rotate(360deg); }
+}
