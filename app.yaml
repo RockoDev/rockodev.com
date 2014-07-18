@@ -38,6 +38,9 @@ handlers:
   static_files: static/robots.txt
   upload: static/robots\.txt
 
+- url: /disqus\.php
+  script: disqus.php
+
 - url: /img\.php
   script: img.php
 
