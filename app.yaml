@@ -21,6 +21,9 @@ handlers:
 #- url: /static/img
 #  static_dir: public/img
 
+- url: /polymer
+  static_dir: polymer
+
 - url: /chromecast
   static_dir: chromecast
 

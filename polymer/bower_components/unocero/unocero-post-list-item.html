@@ -1,0 +1,83 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-ripple/paper-ripple.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+
+<polymer-element name="unocero-post-list-item" attributes="url image">
+
+	<template>
+		<style>    
+			:host {
+				box-sizing: border-box;
+			}
+			#card {
+				position: relative;
+				width: 360px;
+				height: 240px;
+				margin: 10px;
+				padding: 0px;
+				border-top-left-radius: 2px;
+				border-top-right-radius: 2px;
+				border-bottom-right-radius: 2px;
+				border-bottom-left-radius: 2px;
+				box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
+				background-color: rgb(255, 255, 255);
+				background-size: cover;
+				background-position: 50% 50%;
+				box-sizing: border-box;
+			}
+			#card paper-ripple {
+				color: #3a3;
+			}
+			#card #info {
+				width: 100%;
+				height: auto;
+				margin: auto 0px 0px 0px;
+				padding: 10px;
+				border: 0px;
+				box-sizing: border-box;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			#card #info #title {
+				margin: 0px;
+				padding: 0px;
+				border: 0px;
+				font-size: 24px;
+				color: rgb(255, 255, 255);
+			}
+		</style>
+		<core-card id="card" layout vertical style="background-image: url('{{image}}');">
+			<paper-shadow id="shadow" z="1"></paper-shadow>
+			<paper-ripple id="ripple" fit></paper-ripple>
+				<div id="info">
+					<span id="title">{{textContent}}</span>
+				</div>
+		</core-card>
+	</template>
+
+	<script>
+
+		Polymer('unocero-post-list-item', {
+			/**
+			 * The URL of the post.
+			 * 
+			 * @attribute url
+			 * @type string
+			 * @default 'http://www.unocero.com/'
+			 */
+			url: 'http://www.unocero.com/',
+			/**
+			 * The URL of the post image.
+			 * 
+			 * @attribute image
+			 * @type string
+			 * @default 'http://www.unocero.com/wp-content/uploads/2014/08/PETSTOSPACE.jpg'
+			 */
+			image: 'http://www.unocero.com/wp-content/uploads/2014/08/PETSTOSPACE.jpg',
+			ready: function() {
+				//...
+			}
+		});
+
+	</script>
+
+</polymer-element>
