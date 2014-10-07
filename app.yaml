@@ -17,7 +17,6 @@ handlers:
 - url: /static/img/(.*\.(png|jpg|jpeg|gif))
   static_files: static/img/\1
   upload: static/img/(.*\.(png|jpg|jpeg|gif))
-  secure: always
 
 #- url: /static/img
 #  static_dir: public/img
@@ -33,7 +32,6 @@ handlers:
 
 - url: (/game|/game/)
   script: game/index.php
-  secure: always
 
 - url: /favicon\.ico
   static_files: static/favicon.ico
