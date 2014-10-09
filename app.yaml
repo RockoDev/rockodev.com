@@ -21,6 +21,9 @@ handlers:
 #- url: /static/img
 #  static_dir: public/img
 
+- url: /laravel/.*
+  script: laravel/server.php
+
 - url: /polymer
   static_dir: polymer
 
