@@ -1,6 +1,10 @@
 <?php
 
-const BUCKET_NAME = 'rockodevlaravel';
+if ( !defined('BUCKET_NAME') ) {
+	define('BUCKET_NAME', 'rockodevlaravel');
+	//const BUCKET_NAME = 'rockodevlaravel';
+}
+
 $storage_path = "gs://" . BUCKET_NAME . "/storage";
 
 mkdir($storage_path); 
