@@ -32,9 +32,9 @@ ClassLoader::addDirectories(array(
 */
 
 //Log::useFiles(storage_path().'/logs/laravel.log');
-//use Monolog\Logger;
+use Monolog\Logger;
 $monolog = Log::getMonolog();
-$monolog->pushHandler(new Monolog\Handler\SyslogHandler('intranet', 'user', Monolog\Logger::DEBUG, false, LOG_PID));
+$monolog->pushHandler(new Monolog\Handler\SyslogHandler('intranet', 'user', Logger::DEBUG, false, LOG_PID));
 
 /*
 |--------------------------------------------------------------------------
