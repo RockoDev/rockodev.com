@@ -18,8 +18,8 @@ handlers:
   static_files: static/img/\1
   upload: static/img/(.*\.(png|jpg|jpeg|gif))
 
-#- url: /static/img
-#  static_dir: public/img
+- url: /static/temp
+  static_dir: public/temp
 
 - url: /laravel/.*
   script: laravel/server.php
